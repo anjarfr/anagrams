@@ -9,8 +9,10 @@ def find_anagrams(filename: str) -> dict:
     word alphabetically. Appends each word to the list of
     the dictionary key that corresponds to the sorted word
 
-    :param filename:str: name of the file being opened. Path is relative to current directory
-    :raises: FileNotFoundError if filename doesn't resolve to a relative path
+    :param filename:str:    name of the file being opened.
+                            Path is relative to current directory
+    :raises:    FileNotFoundError if filename doesn't resolve to a
+                relative path
     :rtype: dictionary of type {key=sorted word: value=[words]}
     """
     anagrams = defaultdict(list)
@@ -26,8 +28,6 @@ def print_anagrams(anagrams: dict):
     Prints all anagrams in the file
 
     :param anagrams:dict: Dictionary containing all possible anagrams
-    :raises:
-    :rtype:
     """
     for anagram in anagrams.values():
         if len(anagram) > 1:
@@ -40,6 +40,8 @@ def main(filename: str):
         print_anagrams(anagrams)
     except OSError as e:
         print('Could not find the file ', filename)
+        print(e)
+    except Exception as e:
         print(e)
 
 
