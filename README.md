@@ -16,4 +16,4 @@ Run the program by running the command
 $ python3 anagrams.py {filepath}
 ```
 
-from the root folder, where `{filepath}` is an optional argument. `filepath` is the relative path to the file to read from. If no filepath is given, the program will use the default `eventyr.txt` file from the project folder.
+in the command line from the root folder, where `{filepath}` is an optional argument. `filepath` is the relative path to the file to read from. If no filepath is given, the program will use the default `eventyr.txt` file from the project folder.
