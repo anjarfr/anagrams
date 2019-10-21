@@ -6,7 +6,7 @@
 
 ## Requirements
 
-The only requirement to run this program is to have Python 3.x installed.
+The only requirement to run this program is to have Python 3.5 or higher installed.
 
 ## How to run the program
 
