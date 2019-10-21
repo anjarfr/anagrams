@@ -4,18 +4,18 @@ from file_exceptions import FileNotExpectedTypeError
 import os
 
 
-def find_anagrams(filename: str) -> dict:
+def find_anagrams(filepath: str) -> dict:
     """
     Opens a text file and finds anagrams by sorting each
     word alphabetically. Appends each word to the list of
     the dictionary key that corresponds to the sorted word
 
-    :param filename:str: name of the file being opened. Path is relative to current directory
+    :param filepath:str: the relative path to the current directory of the file to read from
     :raises:             FileNotFoundError if filename doesn't resolve to a relative path
     :rtype:              dictionary {sorted word: [words]}
     """
     anagrams = defaultdict(list)
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filepath, 'r', encoding='utf-8') as file:
         for line in file:
             word = line.strip('\n')
             anagrams[''.join(sorted(word))].append(word)
@@ -44,15 +44,15 @@ def check_filetype(filename: str):
         raise FileNotExpectedTypeError
 
 
-def main(filename: str):
+def main(filepath: str):
     try:
-        check_filetype(filename)
-        anagrams = find_anagrams(filename)
+        check_filetype(filepath)
+        anagrams = find_anagrams(filepath)
         print_anagrams(anagrams)
     except FileNotExpectedTypeError:
         print('Please input a .txt or .csv file.')
     except FileNotFoundError:
-        print('Could not find the file ', filename)
+        print('Could not find the file ', filepath)
     except Exception as e:
         print(e)
 
