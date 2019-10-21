@@ -10,12 +10,10 @@ The only requirement to run this program is to have Python 3.x installed.
 
 ## How to run the program
 
-Specify the filepath given to the call to the `main()` function, or leave it as it is to read from the `eventyr.txt` file in the project folder.
-
 Run the program by running the command
 
 ```console
-$ python anagrams.py
+$ python anagrams.py {filepath}
 ```
 
-from the root folder.
+from the root folder, where `{filepath}` is an optional argument. `filepath` is the relative path to the file to read from. If no filepath is given, the program will use the default `eventyr.txt` file from the project folder.
